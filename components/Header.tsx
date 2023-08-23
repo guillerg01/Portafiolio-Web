@@ -15,6 +15,10 @@ export const Header = ()=>{
                  <SocialIcon
                 url='http://linkedin.com/guillerg01'
                 ></SocialIcon>
+                 <SocialIcon
+                url='http://github.com/guillerg01'
+                ></SocialIcon>
+                
             </div>
 
             <div className="algo"></div>
