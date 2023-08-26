@@ -3,7 +3,7 @@
 import { Cursor,useTypewriter } from "react-simple-typewriter"
 import { BackgroundCircles } from "./Background"
 import Image from "next/image"
-
+import Imagen from '../../img/img.jpg'
 
 export const Hero = ()=>{
     const[text,count] =useTypewriter({
@@ -15,18 +15,19 @@ export const Hero = ()=>{
  
 
     
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-        <BackgroundCircles></BackgroundCircles>
+    <div className="h-screen  flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
 
-        <Image></Image>
-        
 
-        <h1 className="text-xl">
-            <span>{text}</span>
+            <BackgroundCircles></BackgroundCircles>
+            <Image className="rounded-full mx-auto relative object-cover" width={100} height={100} src={Imagen} alt="Imagen"></Image>
+          
             
-        <Cursor cursorColor="#F7AB0A"></Cursor>
+            <h1 className="text-xl"><span>{text}</span>
+
+                <Cursor cursorColor="#F7AB0A"></Cursor>
             </h1>
-       </div>
+            </div>
+
 
 
 
