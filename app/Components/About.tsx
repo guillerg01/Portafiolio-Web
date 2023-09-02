@@ -41,7 +41,7 @@ export const About = () =>{
             <h4 className='text-xl font-semibold'>Here is a <span className='underline decoration-[#F7AB0A] '>little</span>  background</h4>
 
             <p className='text-base'>
-            Soy un desarrollador web con un año de experiencia en React, el cual aprendí rápidamente gracias a mi pasión por el aprendizaje y la ayuda de amigos expertos. He realizado varios proyectos personales usando style components, tailwind css, hooks, usecontext, llamadas a servidores y apis. Me gusta estar informado, enfrentar retos y hacer las cosas bien. Tengo habilidades para crear módulos especializados, trabajar con calidad y cumplir plazos.
+            I am a web developer with a year of experience in React, which I learned quickly thanks to my passion for learning and the help of expert friends. I have done several personal projects using style components, tailwind css, hooks, usecontext, server calls and apis. I like to be informed, face challenges and do things well. I have skills to create specialized modules, work with quality and meet deadlines.
             </p>
         </div>
 

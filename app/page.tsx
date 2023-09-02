@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Hero } from './Components/Hero'
 import { Header } from '@/components/Header'
 import { About } from './Components/About'
+import { Experience } from './Components/Experience'
 
 export default function Home() {
   return (
@@ -20,6 +21,13 @@ export default function Home() {
       <section id='about' className='snap-center'>
         <About></About>
       </section>
+
+
+      <section id='experience' className='snap-center'>
+        <Experience></Experience>
+      </section>
+
+      
     </div>
 
   )
