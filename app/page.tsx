@@ -3,6 +3,7 @@ import { Hero } from './Components/Hero'
 import { Header } from '@/components/Header'
 import { About } from './Components/About'
 import { Experience } from './Components/Experience'
+import { Skills } from './Components/Skills'
 
 export default function Home() {
   return (
@@ -25,6 +26,12 @@ export default function Home() {
 
       <section id='experience' className='snap-center'>
         <Experience></Experience>
+      </section>
+
+
+
+      <section id='skills' className='snap-center'>
+        <Skills></Skills>
       </section>
 
       
