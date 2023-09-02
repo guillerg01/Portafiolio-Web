@@ -26,8 +26,9 @@ export const Skills= ({direcctionLeft} :Props)=>{
 <div className="grid grid-cols-4 gap-5">
 
 {SkillsUrl.map((s,i)=>{
-
-    return( <Skill  key={i} skil={s}></Skill>)
+    let es= false
+i%2===0? es=true :es=false
+    return( <Skill direcctionLeft={es} key={i} skil={s}></Skill>)
 })}
 
     
