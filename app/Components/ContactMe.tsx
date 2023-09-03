@@ -46,16 +46,16 @@ export const ContactMe = () => {
                    <a href='http://wa.me/+5355545028'>  <p className="text-2xl">Cuba Camaguey</p></a>
                 </div>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:space-y-2  xl:space-y-2 space-y-5  w-fit mx-auto">
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:space-y-2  xl:space-y-2 space-y-5   md:w-fit mx-auto">
 
                         <div className="flex space-x-2">
-                            <input {...register('name')} placeholder="Name" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 px-6 py-4" type="text"></input>
-                            <input  {...register('email')} placeholder="Email" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 px-6 py-4" type="text"></input>
+                            <input {...register('name')} placeholder="Name" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-200 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/70 hover:border-[#F7AB0A]/40 px-6 w-[50%] py-4" type="text"></input>
+                            <input  {...register('email')} placeholder="Email" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-200 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/70 hover:border-[#F7AB0A]/40 px-6 py-4 w-[50%]" type="text"></input>
                         </div>
 
-                        <input  {...register('subject')} placeholder="Subject" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 px-6 py-4" type="text"></input>
+                        <input  {...register('subject')} placeholder="Subject" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-200 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/70 hover:border-[#F7AB0A]/40 px-6 py-4" type="text"></input>
 
-                        <textarea  {...register('message')} placeholder="Message" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 px-6 py-4" ></textarea>
+                        <textarea  {...register('message')} placeholder="Message" className="outline-none bg-slate-400/10 rounded-sm border-[#242424] text-gray-200 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/70 hover:border-[#F7AB0A]/40 px-6 py-4" ></textarea>
 
                         <button type="submit" className="bg-[#F7AB0A] hover:bg-[#F7AB0A]/50 py-5 px-10 rounded-md text-black font-bold text-xl">Submit</button>
 
