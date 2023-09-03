@@ -25,10 +25,10 @@ export default function Home() {
         <About></About>
       </section>
 
-
+{/* 
       <section id='experience' className='snap-center'>
         <Experience></Experience>
-      </section>
+      </section> */}
 
 
 
