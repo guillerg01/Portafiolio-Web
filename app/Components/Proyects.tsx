@@ -1,16 +1,11 @@
 'use client'
 
 import Imagen from '../../img/assistence2.jpg'
-
-
 import Imagen2 from '../../img/cronometroV2.jpg'
 import Imagen3 from '../../img/cronometroback.jpg'
 import Imagen4 from '../../img/libreria.jpg'
 import Imagen5 from '../../img/pelu.jpg'
 import Imagen6 from '../../img/pruebafigma.jpg'
-
-
-
 import { motion } from 'framer-motion'
 
 
@@ -23,19 +18,20 @@ const INFO = ['Development of a WEB control and administration of School Attenda
   
 const TITLE = ['Assistence App','Cronometro App', 'Cronometro Backend','Library-Test','Art-Glam','Figma-Test']
 
+const Skillsurl = ['https://skillicons.dev/icons?i=css,vscode,github,html,js,materialui,react','https://skillicons.dev/icons?i=git,css,docker,vscode,github,html,js,materialui,nextjs,nodejs,react,tailwind,ts','https://skillicons.dev/icons?i=git,css,docker,vscode,github,html,js,nodejs','https://skillicons.dev/icons?i=git,css,vscode,figma,github,html,js,materialui,nextjs,nodejs,react,tailwind,ts','https://skillicons.dev/icons?i=git,css,vscode,figma,github,html,js,materialui,nextjs,react,tailwind','https://skillicons.dev/icons?i=git,css,vscode,figma,github,html,js,materialui,nextjs,react,tailwind,ts' ]
 
-
+'git,css,discord,docker,vscode,figma,github,bootstrap,html,js,materialui,nextjs,nodejs,react,tailwind,ts' 
 
 return(<div 
         className="h-screen flex relative flex-col  text-left md:flex-row max-w-full xl:px-10 justify-evenly  mx-auto items-center z-0"
     >
-        <h3 className="absolute top-24 xl:top-16 md:top-16 uppercase tracking-[20px] text-gray-500 text-2xl">Proyects</h3>
+        <h3 className="absolute top-24 xl:top-12 md:top-12  uppercase tracking-[20px] text-gray-500 text-2xl">Proyects</h3>
 
 
-        <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+        <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
             {URL.map((u,i)=>{
                 return(
-                    <div  key={i} className='h-screen flex flex-shrink-0 snap-center flex-col space-y-5 items-center justify-center p-20 md:p-44 w-screen'>
+                    <div  key={i} className='h-screen hover:scale-110 transition-all flex flex-shrink-0 snap-center flex-col space-y-5 items-center justify-center p-20 md:p-44 w-screen'>
                     <motion.img 
                     initial={{
                         y:-300,
@@ -53,12 +49,13 @@ return(<div
                     }}
                     
                     
-                    src= {u} className='xl:w-2/4 md:w-2/4'></motion.img>
+                    src= {u} className='xl:w-[45%] md:w-2/4 '></motion.img>
                     <div className='space-y-5 px-0 md:px-10 max-w-6xl'>
                         <h4 className='text-4l font-semibold text-center'>
                             <span className='underline decoration-[#F7AB0A]'>Case Study {i+1} of {URL.length}:</span> {TITLE[i]}</h4>
-
-
+                            <div className=' justify-center flex mx-auto'>
+                            <motion.img className='object-cover filter hover:scale-110 transition duration-300 ease-in-out ' src={Skillsurl[i]} alt='imagenn'></motion.img>
+                            </div>
                             <p className=' text-center md:text-left'>{INFO[i]}</p>
 
                     </div>

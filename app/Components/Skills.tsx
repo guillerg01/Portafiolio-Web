@@ -6,11 +6,11 @@ type Props ={
     direcctionLeft?: boolean
 }
 
-
+export  const SkillsUrl = ['git','css','discord','docker','vscode','figma','github','bootstrap','html','js','materialui','nextjs','nodejs','react','tailwind','ts' ]
 export const Skills= ({direcctionLeft} :Props)=>{
 
 
-    const SkillsUrl = ['git','css','discord','docker','vscode','figma','github','bootstrap','html','js','materialui','nextjs','nodejs','react','tailwind','ts' ]
+  
 
     return(<>
         <motion.div

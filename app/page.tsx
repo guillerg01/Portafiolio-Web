@@ -10,7 +10,7 @@ import { ContactMe } from './Components/ContactMe'
 export default function Home() {
   return (
 
-    <div className="bg-[rgb(36,36,36)] snap-y snap-mandatory overflow-scroll z-0 text-white h-screen">
+    <div className="bg-[rgb(36,36,36)] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 text-white h-screen scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
 
 
       <Header></Header>

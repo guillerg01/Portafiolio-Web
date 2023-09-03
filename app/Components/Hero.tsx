@@ -4,7 +4,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter"
 import { BackgroundCircles } from "./Background"
 import Image from "next/image"
 import Imagen from '../../img/img.jpg'
-import Link from "next/link"
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export const Hero = () => {
     const [text, count] = useTypewriter({
@@ -37,16 +37,42 @@ export const Hero = () => {
 
 
                 <div className="pt-5">
-                    <Link href='#About'>
+
+                    <Link activeClass="active"
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+
+                    >
                         <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">About</button>
                     </Link>
-                    <Link href='#experience'>
+                    <Link activeClass="active"
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500} href='#experience'>
                         <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Experience</button>
                     </Link>
-                    <Link href='#Skills'>
+                    <Link 
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}  href='#Skills'>
                         <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Skills</button>
                     </Link>
-                    <Link href='#Proyects'>
+                    <Link 
+                     activeClass="active"
+                     to="about"
+                     spy={true}
+                     smooth={true}
+                     offset={-70}
+                     duration={500} 
+                     href='#Proyects'>
                         <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Proyects</button>
                     </Link>
 
