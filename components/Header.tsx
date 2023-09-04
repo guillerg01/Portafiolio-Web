@@ -73,7 +73,7 @@ export const Header = () => {
                 <button onClick={() => {
                     const aboutSection = document.getElementById('contact');
                     aboutSection?.scrollIntoView({ behavior: 'smooth' });
-                }} className="px-6 py-2  hidden md:inline-flex border hover:scale-105 hover:underline  border-transparent rounded-full uppercase text-sm  text-gray-500 transition-all  hover:text-[#F7AB0A]/40">
+                }} className="px-6 py-2  hidden md:inline-flex  border hover:scale-105 hover:underline  border-transparent rounded-full uppercase text-sm  text-gray-400 transition-all  hover:text-[#F7AB0A]/40">
                   Get in Touch  
                 </button>
 
