@@ -30,16 +30,19 @@ export const Header = () => {
                     fgColor='gray'
                     bgColor='transparent'
                     url='http://github.com/guillerg01'
+                    className='hover:scale-110'
                 ></SocialIcon>
                 <SocialIcon
                     fgColor='gray'
                     bgColor='transparent'
                     url='http://linkedin.com/guillerg01'
+                    className='hover:scale-110'
                 ></SocialIcon>
                 <SocialIcon
                     fgColor='gray'
                     bgColor='transparent'
                     url='https://www.facebook.com/profile.php?id=100013480143462'
+                    className='hover:scale-110'
                 ></SocialIcon>
             </motion.div>
 
@@ -60,12 +63,21 @@ export const Header = () => {
                 }}
 
                 className="flex flex-row items-center cursor-pointer">
-                <SocialIcon
-                    fgColor='gray'
-                    bgColor='transparent'
-                    network='email'
-                ></SocialIcon>
-                <h3 className='uppercase hidden md:inline-flex text-sm text-gray-400'>Get in Touch</h3>
+
+<SocialIcon
+                        fgColor='gray'
+                        bgColor='transparent'
+                        network='email'
+                       
+                    ></SocialIcon>
+                <button onClick={() => {
+                    const aboutSection = document.getElementById('contact');
+                    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+                }} className="px-6 py-2  hidden md:inline-flex border hover:scale-105 hover:underline  border-transparent rounded-full uppercase text-sm  text-gray-500 transition-all  hover:text-[#F7AB0A]/40">
+                  Get in Touch  
+                </button>
+
+                <h3 className='uppercase text-sm text-gray-400'></h3>
             </motion.div>
 
 

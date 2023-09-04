@@ -4,7 +4,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter"
 import { BackgroundCircles } from "./Background"
 import Image from "next/image"
 import Imagen from '../../img/img.jpg'
-import { Link, animateScroll as scroll } from "react-scroll";
+
 
 export const Hero = () => {
     const [text, count] = useTypewriter({
@@ -12,6 +12,8 @@ export const Hero = () => {
         loop: true,
         delaySpeed: 2000
     })
+
+    
     return (
 
 
@@ -20,7 +22,7 @@ export const Hero = () => {
 
 
             <BackgroundCircles></BackgroundCircles>
-            <Image className="rounded-full mx-auto relative object-cover" width={100} height={100} src={Imagen} alt="Imagen"></Image>
+            <Image className="rounded-full mx-auto relative object-cover  hover:scale-150 transition-all hover:-rotate-6" width={100} height={100} src={Imagen} alt="Imagen"></Image>
 
             <div className="z-20">
 
@@ -38,43 +40,33 @@ export const Hero = () => {
 
                 <div className="pt-5">
 
-                    <Link activeClass="active"
-                        to="about"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-
-                    >
-                        <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">About</button>
-                    </Link>
-                    <Link activeClass="active"
-                        to="about"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500} href='#experience'>
-                        <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Experience</button>
-                    </Link>
-                    <Link 
-                    activeClass="active"
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}  href='#Skills'>
-                        <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Skills</button>
-                    </Link>
-                    <Link 
-                     activeClass="active"
-                     to="about"
-                     spy={true}
-                     smooth={true}
-                     offset={-70}
-                     duration={500} 
-                     href='#Proyects'>
-                        <button className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Proyects</button>
-                    </Link>
+               
+                <button onClick={() => {
+        const aboutSection = document.getElementById('about');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }} className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">About</button>
+               
+                    
+                        {/* <button onClick={() => {
+        const aboutSection = document.getElementById('about');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }} className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Experience</button> */}
+                    
+                        <button onClick={() => {
+        const aboutSection = document.getElementById('skills');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }} className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Skills</button>
+                    
+                        <button onClick={() => {
+        const aboutSection = document.getElementById('proyects');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }} className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Proyects</button>
+                     
+                     <button onClick={() => {
+        const aboutSection = document.getElementById('contact');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }} className="px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40">Contact</button>
+                   
 
 
 

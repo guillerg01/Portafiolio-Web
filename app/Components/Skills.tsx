@@ -1,6 +1,7 @@
 'use client'
 import { motion } from "framer-motion"
 import { Skill } from "./Skill"
+import { log } from "console"
 
 type Props ={
     direcctionLeft?: boolean
@@ -28,6 +29,8 @@ export const Skills= ({direcctionLeft} :Props)=>{
 {SkillsUrl.map((s,i)=>{
     let es= false
 i%2===0? es=true :es=false
+
+
     return( <Skill direcctionLeft={es} key={i} skil={s}></Skill>)
 })}
 

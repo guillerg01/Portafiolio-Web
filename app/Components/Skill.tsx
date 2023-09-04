@@ -14,7 +14,7 @@ export const Skill = ({direcctionLeft,skil}:Props)=>{
         <div>
     <motion.img
     initial={{
-        x: direcctionLeft ? -200 :200,
+        x: direcctionLeft ? -100 :100,
         opacity:0
     }}
 
@@ -25,10 +25,10 @@ export const Skill = ({direcctionLeft,skil}:Props)=>{
         opacity:1,
         x:0
     }}
-
+   
 
     
-    className="object-cover filter hover:grayscale transition duration-300 ease-in-out " src={Url} />
+    className=" hover:grayscale hover:scale-110 transition duration-300  " src={Url} />
     
    
     
