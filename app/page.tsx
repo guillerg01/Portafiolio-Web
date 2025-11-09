@@ -1,55 +1,21 @@
-import Image from 'next/image'
-import { Hero } from './Components/Hero'
-import { Header } from '@/components/Header'
-import { About } from './Components/About'
-import { Experience } from './Components/Experience'
-import { Skills } from './Components/Skills'
-import { Proyects } from './Components/Proyects'
-import { ContactMe } from './Components/ContactMe'
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/app/sections/hero/Hero";
+import { AboutSection } from "@/app/sections/about/AboutSection";
+import { ExperienceSection } from "@/app/sections/experience/ExperienceSection";
+import { SkillsSection } from "@/app/sections/skills/SkillsSection";
+import { ProjectsSection } from "@/app/sections/projects/ProjectsSection";
+import { ContactSection } from "@/app/sections/contact/ContactSection";
 
 export default function Home() {
   return (
-
-    <div className="bg-[rgb(36,36,36)] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 text-white h-screen scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-
-
-      <Header></Header>
-
-
-      <section id='hero' className='snap-start'>
-        <Hero></Hero>
-      </section>
-
-
-      <section id='about' className='snap-center'>
-        <About></About>
-      </section>
-
-{/* 
-      <section id='experience' className='snap-center'>
-        <Experience></Experience>
-      </section> */}
-
-
-
-      <section id='skills' className='snap-center'>
-        <Skills></Skills>
-      </section>
-
-
-      <section id='proyects' className='snap-center'>
-        <Proyects></Proyects>
-
-      </section>
-
-
-
-      <section id='contact' className='snap-center'>
-        <ContactMe></ContactMe>
-
-      </section>
-      
+    <div className="relative h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden bg-[rgb(14,14,16)] text-white scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-[#F7AB0A]/70">
+      <Header />
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ContactSection />
     </div>
-
-  )
+  );
 }
