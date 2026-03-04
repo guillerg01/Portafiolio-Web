@@ -36,25 +36,23 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex h-screen snap-start flex-col items-center justify-center gap-4 overflow-hidden px-6 text-center"
+      className="relative flex h-screen snap-start flex-col overflow-hidden px-6 text-center"
     >
       <BackgroundDonuts />
       <BackgroundCircles />
 
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <div className="relative flex h-[200px] w-[200px] items-center justify-center">
-          <Image
-            src={avatarSrc}
-            alt={profile.name}
-            width={140}
-            height={140}
-            priority
-            className="absolute inset-0 mx-auto h-32 w-32 rounded-full object-cover shadow-2xl ring-2 ring-[#333333]/50 transition-transform duration-300 hover:scale-105"
-          />
-        </div>
+      <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+        <Image
+          src={avatarSrc}
+          alt={profile.name}
+          width={140}
+          height={140}
+          priority
+          className="h-32 w-32 rounded-full object-cover shadow-2xl ring-2 ring-[#333333]/50 transition-transform duration-300 hover:scale-105"
+        />
       </div>
 
-      <div className="z-10 flex max-w-md flex-col items-center gap-3">
+      <div className="absolute left-0 right-0 top-[58%] z-10 flex flex-col items-center gap-3 px-4 pt-2">
         <p className="text-xs uppercase tracking-[10px] text-gray-400">
           {profile.title}
         </p>

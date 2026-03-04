@@ -8,7 +8,7 @@ import { ContactSection } from "@/app/sections/contact/ContactSection";
 
 export default function Home() {
   return (
-    <div className="relative h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden bg-[rgb(14,14,16)] text-white scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-[#F7AB0A]/70">
+    <div className="relative h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden bg-[rgb(14,14,16)] text-white">
       <Header />
       <HeroSection />
       <AboutSection />
