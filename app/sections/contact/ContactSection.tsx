@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
-import { contactChannels, profile } from "@/app/data/profile";
+import { useLocale } from "@/app/providers/LocaleProvider";
 
 type ContactFormValues = {
   name: string;
@@ -12,14 +12,15 @@ type ContactFormValues = {
 };
 
 export function ContactSection() {
+  const {
+    content: { contact },
+  } = useLocale();
+
   const { register, handleSubmit, reset } = useForm<ContactFormValues>({
     defaultValues: { name: "", email: "", company: "", message: "" },
   });
 
-  const mailtoBase = useMemo(
-    () => `mailto:guillerg0101@gmail.com`,
-    []
-  );
+  const mailtoBase = useMemo(() => `mailto:guillerg0101@gmail.com`, []);
 
   const onSubmit = (values: ContactFormValues) => {
     const params = new URLSearchParams({
@@ -48,10 +49,10 @@ export function ContactSection() {
     >
       <header className="absolute top-24 text-center">
         <h2 className="text-3xl uppercase tracking-[18px] text-gray-500">
-          Contact
+          {contact.sectionTitle}
         </h2>
         <p className="mt-2 text-sm uppercase tracking-[6px] text-gray-400">
-          Let&apos;s build something exceptional
+          {contact.subtitle}
         </p>
       </header>
 
@@ -60,17 +61,15 @@ export function ContactSection() {
       <div className="mt-40 grid w-full max-w-5xl gap-10 lg:grid-cols-[1.1fr_1fr]">
         <div className="space-y-6 rounded-3xl border border-white/5 bg-white/5 p-8 backdrop-blur-md">
           <h3 className="text-2xl font-semibold text-white">
-            Collaborate with Guillermo
+            {contact.subtitle}
           </h3>
           <p className="text-sm leading-relaxed text-gray-300">
-            I&apos;m currently partnering with teams on complex frontend,
-            real-time, and Web3 initiatives. Share your idea, and let&apos;s
-            explore how we can make it real.
+            {contact.intro}
           </p>
           <ul className="space-y-4 text-sm text-gray-200">
-            {contactChannels.map((channel) => (
+            {contact.channels.map((channel) => (
               <li
-                key={channel.type}
+                key={`${channel.type}-${channel.value}`}
                 className="flex items-center justify-between rounded-2xl border border-white/5 bg-white/5 px-4 py-3 transition hover:border-[#F7AB0A]/60 hover:bg-white/10"
               >
                 <div>
@@ -83,13 +82,13 @@ export function ContactSection() {
                   href={channel.url}
                   className="rounded-full border border-[#F7AB0A]/60 px-3 py-1 text-xs font-medium uppercase tracking-wide text-[#F7AB0A] transition hover:bg-[#F7AB0A]/10"
                 >
-                  Reach out
+                  {channel.cta}
                 </a>
               </li>
             ))}
           </ul>
           <div className="rounded-2xl border border-white/5 bg-white/5 p-4 text-xs uppercase tracking-[6px] text-gray-400">
-            Available for remote engagements · {profile.location}
+            {contact.availability}
           </div>
         </div>
 
@@ -99,16 +98,16 @@ export function ContactSection() {
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-2 text-sm text-gray-300">
-              Name
+              {contact.form.name}
               <input
                 {...register("name", { required: true })}
-                placeholder="Your name"
+                placeholder={contact.form.name}
                 className="rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-[#F7AB0A]"
                 required
               />
             </label>
             <label className="flex flex-col gap-2 text-sm text-gray-300">
-              Email
+              {contact.form.email}
               <input
                 {...register("email", { required: true })}
                 type="email"
@@ -120,19 +119,19 @@ export function ContactSection() {
           </div>
 
           <label className="flex flex-col gap-2 text-sm text-gray-300">
-            Company (optional)
+            {contact.form.company}
             <input
               {...register("company")}
-              placeholder="Where are you building?"
+              placeholder={contact.form.companyPlaceholder}
               className="rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-[#F7AB0A]"
             />
           </label>
 
           <label className="flex flex-col gap-2 text-sm text-gray-300">
-            Message
+            {contact.form.message}
             <textarea
               {...register("message", { required: true })}
-              placeholder="Share a short brief, timeline, or problem we can solve together."
+              placeholder={contact.form.messagePlaceholder}
               rows={5}
               className="rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-[#F7AB0A]"
               required
@@ -143,12 +142,10 @@ export function ContactSection() {
             type="submit"
             className="w-full rounded-full bg-[#F7AB0A] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition hover:bg-[#F7AB0A]/80"
           >
-            Start the Conversation
+            {contact.form.submit}
           </button>
         </form>
       </div>
     </section>
   );
 }
-
-

@@ -1,23 +1,24 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { LocaleProvider } from "@/app/providers/LocaleProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Guillermo Rodriguez | Senior Frontend & Fullstack Engineer",
+  title: "Guillermo Rodriguez | Senior Frontend Engineer (React, Next.js)",
   description:
-    "Portfolio for Guillermo Rodriguez, a senior frontend engineer specializing in data-intensive SaaS, Web3 integrations, and realtime platforms.",
+    "Portfolio of Guillermo Enrique Rodriguez Galban. 4+ years in software development, 3+ as Senior Frontend Engineer. SaaS, Web3, real-time UIs, checkout and subscription flows, multi-tenant dashboards.",
   openGraph: {
-    title: "Guillermo Rodriguez | Senior Frontend & Fullstack Engineer",
+    title: "Guillermo Rodriguez | Senior Frontend Engineer (React, Next.js)",
     description:
-      "Frontend lead experienced in Next.js, Web3, payments, and healthcare-grade platforms.",
-    url: "https://github.com/guillerg01",
+      "Senior Frontend Engineer specializing in React, Next.js, SaaS, Web3, and real-time platforms. Loem Agency, AGL Tech.",
+    url: "https://www.linkedin.com/in/guillerg01/",
     siteName: "Guillermo Rodriguez Portfolio",
     locale: "en_US",
     type: "website",
   },
-  metadataBase: new URL("https://github.com/guillerg01"),
+  metadataBase: new URL("https://guillerg01.github.io/Portafiolio-Web"),
 };
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-[rgb(14,14,16)] text-white antialiased`}
       >
-        {children}
+        <LocaleProvider>{children}</LocaleProvider>
       </body>
     </html>
   );

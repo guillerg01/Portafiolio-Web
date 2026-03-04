@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { projects } from "@/app/data/profile";
+import { useLocale } from "@/app/providers/LocaleProvider";
 
 export function ProjectsSection() {
+  const {
+    content: { projects },
+  } = useLocale();
+
   return (
     <section
       id="projects"
@@ -11,17 +15,17 @@ export function ProjectsSection() {
     >
       <header className="absolute top-24 text-center">
         <h2 className="text-3xl uppercase tracking-[18px] text-gray-500">
-          Projects
+          {projects.sectionTitle}
         </h2>
         <p className="mt-2 text-sm uppercase tracking-[6px] text-gray-400">
-          Highlights from recent builds
+          {projects.subtitle}
         </p>
       </header>
 
       <div className="pointer-events-none absolute left-20 top-1/4 h-[520px] w-[520px] rounded-full bg-sky-500/10 blur-3xl" />
 
       <div className="mt-40 flex w-full max-w-6xl snap-x snap-mandatory gap-8 overflow-x-auto pb-10">
-        {projects.map((project, index) => (
+        {projects.items.map((project, index) => (
           <motion.article
             key={project.name}
             initial={{ opacity: 0, y: 48 }}

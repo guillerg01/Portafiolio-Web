@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skillCategories } from "@/app/data/profile";
+import { useLocale } from "@/app/providers/LocaleProvider";
 
 export function SkillsSection() {
+  const {
+    content: { skills },
+  } = useLocale();
+
   return (
     <section
       id="skills"
@@ -11,10 +15,10 @@ export function SkillsSection() {
     >
       <header className="absolute top-24 text-center">
         <h2 className="text-3xl uppercase tracking-[18px] text-gray-500">
-          Skills
+          {skills.sectionTitle}
         </h2>
         <p className="mt-2 text-sm uppercase tracking-[6px] text-gray-400">
-          Tooling & specialties
+          {skills.subtitle}
         </p>
       </header>
 
@@ -27,7 +31,7 @@ export function SkillsSection() {
         transition={{ duration: 0.6 }}
         className="mt-40 grid w-full max-w-5xl gap-6 md:grid-cols-2"
       >
-        {skillCategories.map((category) => (
+        {skills.categories.map((category) => (
           <article
             key={category.title}
             className="rounded-3xl border border-white/5 bg-white/5 p-6 backdrop-blur-xl transition hover:border-[#F7AB0A]/60 hover:bg-white/10"

@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experiences } from "@/app/data/profile";
+import { useLocale } from "@/app/providers/LocaleProvider";
 
 export function ExperienceSection() {
+  const {
+    content: { experience },
+  } = useLocale();
+
   return (
     <section
       id="experience"
@@ -11,19 +15,19 @@ export function ExperienceSection() {
     >
       <header className="absolute top-24 text-center">
         <h2 className="text-3xl uppercase tracking-[18px] text-gray-500">
-          Experience
+          {experience.sectionTitle}
         </h2>
         <p className="mt-2 text-sm uppercase tracking-[6px] text-gray-400">
-          Selected roles & impact
+          {experience.subtitle}
         </p>
       </header>
 
       <div className="pointer-events-none absolute left-0 top-1/3 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[#F7AB0A]/5 blur-3xl" />
 
       <div className="mt-40 flex w-full max-w-6xl flex-col gap-8">
-        {experiences.map((experience, index) => (
+        {experience.items.map((item, index) => (
           <motion.article
-            key={`${experience.company}-${experience.period}`}
+            key={`${item.company}-${item.period}`}
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -33,22 +37,22 @@ export function ExperienceSection() {
             <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
               <div>
                 <h3 className="text-xl font-semibold text-white">
-                  {experience.role}
+                  {item.role}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  {experience.company}
-                  {experience.location ? ` • ${experience.location}` : ""}
+                  {item.company}
+                  {item.location ? ` • ${item.location}` : ""}
                 </p>
               </div>
               <span className="text-sm font-medium uppercase tracking-widest text-[#F7AB0A]">
-                {experience.period}
+                {item.period}
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-gray-300">
-              {experience.summary}
+              {item.summary}
             </p>
             <ul className="mt-6 grid gap-3 text-sm leading-relaxed text-gray-200 md:grid-cols-2">
-              {experience.achievements.map((achievement) => (
+              {item.achievements.map((achievement) => (
                 <li key={achievement} className="flex gap-3">
                   <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-[#F7AB0A]" />
                   <span>{achievement}</span>
@@ -56,7 +60,7 @@ export function ExperienceSection() {
               ))}
             </ul>
             <div className="mt-6 flex flex-wrap gap-2 text-xs uppercase tracking-wide text-gray-300">
-              {experience.technologies.map((tech) => (
+              {item.technologies.map((tech) => (
                 <span
                   key={tech}
                   className="rounded-full border border-white/10 px-3 py-1"
@@ -71,5 +75,3 @@ export function ExperienceSection() {
     </section>
   );
 }
-
-
