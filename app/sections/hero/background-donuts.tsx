@@ -42,7 +42,7 @@ export const BackgroundDonuts = memo(function BackgroundDonuts() {
       DONUTS.map((donut) => (
         <div
           key={donut.id}
-          className="absolute hidden rounded-full lg:block"
+          className="absolute hidden rounded-full lg:block animate-pulse-donut"
           style={{
             width: donut.size,
             height: donut.size,
@@ -52,7 +52,6 @@ export const BackgroundDonuts = memo(function BackgroundDonuts() {
             opacity: donut.opacity,
             filter: `blur(${donut.blur}px)`,
             transform: "translate(-50%, -50%)",
-            animation: `pulseDonut 14s ease-in-out infinite`,
             animationDelay: donut.animationDelay,
           }}
         />
@@ -61,21 +60,6 @@ export const BackgroundDonuts = memo(function BackgroundDonuts() {
   );
 
   return (
-    <>
-      <style jsx>{`
-        @keyframes pulseDonut {
-          0%,
-          100% {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 0.12;
-          }
-          50% {
-            transform: translate(-50%, -50%) scale(1.12);
-            opacity: 0.22;
-          }
-        }
-      `}</style>
-      <div className="pointer-events-none absolute inset-0">{elements}</div>
-    </>
+    <div className="pointer-events-none absolute inset-0">{elements}</div>
   );
 });
