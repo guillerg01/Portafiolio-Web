@@ -91,6 +91,7 @@ export type Content = {
   };
   header: {
     getInTouch: string;
+    downloadCv: string;
   };
 };
 
@@ -424,6 +425,7 @@ export const translations: Record<Locale, Content> = {
     },
     header: {
       getInTouch: "Get in touch",
+      downloadCv: "Download CV",
     },
   },
   es: {
@@ -755,6 +757,7 @@ export const translations: Record<Locale, Content> = {
     },
     header: {
       getInTouch: "Contactar",
+      downloadCv: "Descargar CV",
     },
   },
 };

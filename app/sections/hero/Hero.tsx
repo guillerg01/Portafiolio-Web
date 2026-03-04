@@ -36,20 +36,22 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex h-screen snap-start flex-col items-center justify-center gap-6 overflow-hidden px-6 text-center"
+      className="relative flex h-screen snap-start flex-col items-center justify-center gap-4 overflow-hidden px-6 text-center"
     >
       <BackgroundDonuts />
       <BackgroundCircles />
 
-      <div className="relative z-10">
-        <Image
-          src={avatarSrc}
-          alt={profile.name}
-          width={140}
-          height={140}
-          priority
-          className="mx-auto h-32 w-32 rounded-full object-cover shadow-2xl transition-transform duration-300 hover:scale-105"
-        />
+      <div className="relative z-10 flex flex-col items-center justify-center">
+        <div className="relative flex h-[200px] w-[200px] items-center justify-center">
+          <Image
+            src={avatarSrc}
+            alt={profile.name}
+            width={140}
+            height={140}
+            priority
+            className="absolute inset-0 mx-auto h-32 w-32 rounded-full object-cover shadow-2xl ring-2 ring-[#333333]/50 transition-transform duration-300 hover:scale-105"
+          />
+        </div>
       </div>
 
       <div className="z-10 flex max-w-md flex-col items-center gap-3">
@@ -90,6 +92,20 @@ export function HeroSection() {
           >
             {hero.nav.linkedin}
           </Link>
+          <a
+            href="/Guillermo_Enrique_Rodríguez_Galban_ES.pdf"
+            download
+            className="rounded-full border border-white/10 px-3 py-1.5 text-xs uppercase tracking-wide text-gray-400 transition hover:border-[#F7AB0A] hover:text-[#F7AB0A]"
+          >
+            CV (ES)
+          </a>
+          <a
+            href="/Guillermo_Enrique_Rodríguez_Galban_EN.pdf"
+            download
+            className="rounded-full border border-white/10 px-3 py-1.5 text-xs uppercase tracking-wide text-gray-400 transition hover:border-[#F7AB0A] hover:text-[#F7AB0A]"
+          >
+            CV (EN)
+          </a>
         </div>
       </div>
     </section>

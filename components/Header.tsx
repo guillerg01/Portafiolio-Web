@@ -5,6 +5,9 @@ import { SocialIcon } from "react-social-icons";
 import { LanguageSelector } from "./LanguageSelector";
 import { useLocale } from "@/app/providers/LocaleProvider";
 
+const CV_PDF_ES = "/Guillermo_Enrique_Rodríguez_Galban_ES.pdf";
+const CV_PDF_EN = "/Guillermo_Enrique_Rodríguez_Galban_EN.pdf";
+
 const socialLinks = [
   { label: "GitHub", url: "https://github.com/guillerg01" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/guillerg01/" },
@@ -14,7 +17,10 @@ const socialLinks = [
 export const Header = () => {
   const {
     content: { header },
+    locale,
   } = useLocale();
+
+  const cvHref = locale === "es" ? CV_PDF_ES : CV_PDF_EN;
 
   const handleScrollToContact = () => {
     const contactSection = document.getElementById("contact");
@@ -50,6 +56,13 @@ export const Header = () => {
         transition={{ duration: 0.8 }}
         className="flex items-center gap-3"
       >
+        <a
+          href={cvHref}
+          download
+          className="hidden rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-200 transition hover:border-[#F7AB0A] hover:bg-[#F7AB0A]/10 hover:text-[#F7AB0A] md:inline-flex"
+        >
+          {header.downloadCv}
+        </a>
         <LanguageSelector />
         <button
           onClick={handleScrollToContact}
